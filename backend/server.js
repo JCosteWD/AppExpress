@@ -1,8 +1,6 @@
 const express = require("express")
 const connectDB = require("./config/db")
 const cors = require('cors')
-
-/* const dotenv = require('dotenv').config() */
 const router = express.Router()
 
 const port = process.env.PORT || 7000
@@ -14,7 +12,6 @@ const app = express()
 app
     .use(cors())
     .use(express.json())
-    /* .use(express.urlencoded({ extended: false })) */
     .use(express.urlencoded({ extended: true }))
     .use("/", require("./routes/routes"))
 

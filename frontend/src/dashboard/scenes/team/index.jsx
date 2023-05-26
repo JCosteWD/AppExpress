@@ -1,20 +1,20 @@
-import { Box, Typography, useTheme } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
-import { tokens } from "../../../theme";
-import { mockDataTeam } from "../../data/mockData";
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
-import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
-import Header from "../../components/Header";
+import { Box, Typography, useTheme } from "@mui/material"
+import { DataGrid } from "@mui/x-data-grid"
+import { tokens } from "../../../theme"
+import { mockDataTeam } from "../../data/mockData"
+import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined"
+import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined"
+import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined"
+import Header from "../../components/Header"
 
 const Team = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
   const columns = [
     { field: "id", headerName: "ID" },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Nom",
       flex: 1,
       cellClassName: "name-column--cell",
     },
@@ -27,7 +27,7 @@ const Team = () => {
     },
     {
       field: "phone",
-      headerName: "Phone Number",
+      headerName: "Téléphone",
       flex: 1,
     },
     {
@@ -37,7 +37,7 @@ const Team = () => {
     },
     {
       field: "accessLevel",
-      headerName: "Access Level",
+      headerName: "Grade",
       flex: 1,
       renderCell: ({ row: { access } }) => {
         return (
@@ -66,11 +66,11 @@ const Team = () => {
         );
       },
     },
-  ];
+  ]
 
   return (
     <Box m="20px">
-      <Header title="TEAM" subtitle="Managing the Team Members" />
+      <Header title="EMPLOYES" subtitle="Managez vos équipes" />
       <Box
         m="40px 0 0 0"
         height="75vh"
@@ -100,10 +100,14 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
+        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns}  
+          componentsProps={{pagination: {
+            labelRowsPerPage: ('Lignes par page')
+          }
+  }} />
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Team;
+export default Team

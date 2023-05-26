@@ -44,7 +44,6 @@ bossSchema.methods.removeAuthToken = async function(token) {
   }
   boss.authTokens.splice(index, 1)
   await boss.save()
-  // Utilisation :
 boss.removeAuthToken('mon-jeton-d-authentification')
 }
 

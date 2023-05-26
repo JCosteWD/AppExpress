@@ -1,10 +1,10 @@
 const UserModel = require("../../models/user.model")
 
 module.exports.updateUser = async (req, res) => {
-  const user = await UserModel.findById(req.params.id);
+  const user = await UserModel.findById(req.params.id)
 
   if (!user) {
-    const msg = "Cette donnée n'existe pas";
+    const msg = "Cette donnée n'existe pas"
     return res.status(400).json({ msg })
   }
 

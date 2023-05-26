@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const passport = require('passport');
-const JwtStrategy = require('passport-jwt').Strategy;
-const ExtractJwt = require('passport-jwt').ExtractJwt;
-const BossModel = require("../models/boss.model");
+const passport = require('passport')
+const JwtStrategy = require('passport-jwt').Strategy
+const ExtractJwt = require('passport-jwt').ExtractJwt
+const BossModel = require("../models/boss.model")
 
 const authentificationBoss = require('../controllers/auth/auth')
 

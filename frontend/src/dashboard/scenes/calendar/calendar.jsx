@@ -4,6 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
+import frLocale from '@fullcalendar/core/locales/fr'
 import {
   Box,
   List,
@@ -21,7 +22,7 @@ const Calendar = () => {
   const [currentEvents, setCurrentEvents] = useState([]);
 
   const handleDateClick = (selected) => {
-    const title = prompt("Please enter a new title for your event");
+    const title = prompt("Entrez un Titre pour votre nouvel Evenement");
     const calendarApi = selected.view.calendar;
     calendarApi.unselect();
 
@@ -39,7 +40,7 @@ const Calendar = () => {
   const handleEventClick = (selected) => {
     if (
       window.confirm(
-        `Are you sure you want to delete the event '${selected.event.title}'`
+        `Etes vous sur de vouloir supprimer cet Evenement ? '${selected.event.title}'`
       )
     ) {
       selected.event.remove();
@@ -48,7 +49,7 @@ const Calendar = () => {
 
   return (
     <Box m="20px">
-      <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
+      <Header title="Calendrier" subtitle="Calendrier Interactif" />
 
       <Box display="flex" justifyContent="space-between">
         {/* CALENDAR SIDEBAR */}
@@ -58,7 +59,7 @@ const Calendar = () => {
           p="15px"
           borderRadius="4px"
         >
-          <Typography variant="h5">Events</Typography>
+          <Typography variant="h5">Evenements</Typography>
           <List>
             {currentEvents.map((event) => (
               <ListItem
@@ -89,6 +90,7 @@ const Calendar = () => {
         {/* CALENDAR */}
         <Box flex="1 1 100%" ml="15px">
           <FullCalendar
+            locale={frLocale}
             height="75vh"
             plugins={[
               dayGridPlugin,

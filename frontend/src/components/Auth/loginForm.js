@@ -18,14 +18,14 @@ function LoginForm() {
       });
       if (response.ok) {
         const data = await response.json()
-        document.cookie = `token=${data.token}; path=/; secure;`;
+        document.cookie = `token=${data.token}; path=/; secure;`
         navigate('/dashboard')
       } else {
         alert('Mauvais identifiant ou mot de passe!')
       }
     } catch (error) {
       console.error(error)
-      alert('Une erreur est survenue lors de la connexion. Veuillez réessayer plus tard.');
+      alert('Une erreur est survenue lors de la connexion. Veuillez réessayer plus tard.')
     }
   }
 
@@ -33,15 +33,15 @@ function LoginForm() {
     <form onSubmit={handleSubmit}>
       <label>
         Identifiant:
-        <input type="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <input className='text-gray-900' type="username" value={username} onChange={(e) => setUsername(e.target.value)} />
       </label>
       <label>
         Mot de passe:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input className='text-gray-900' type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </label>
       <button type="submit">Se connecter</button>
     </form>
-  );
+  )
 }
 
 export default LoginForm

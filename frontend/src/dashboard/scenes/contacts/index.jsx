@@ -11,10 +11,10 @@ const Contacts = () => {
 
   const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registrar ID" },
+    { field: "registrarId", headerName: "Registre ID" },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Nom",
       flex: 1,
       cellClassName: "name-column--cell",
     },
@@ -27,7 +27,7 @@ const Contacts = () => {
     },
     {
       field: "phone",
-      headerName: "Phone Number",
+      headerName: "Téléphone",
       flex: 1,
     },
     {
@@ -37,17 +37,17 @@ const Contacts = () => {
     },
     {
       field: "address",
-      headerName: "Address",
+      headerName: "Adresse",
       flex: 1,
     },
     {
       field: "city",
-      headerName: "City",
+      headerName: "Ville",
       flex: 1,
     },
     {
       field: "zipCode",
-      headerName: "Zip Code",
+      headerName: "Code Postal",
       flex: 1,
     },
   ];
@@ -56,7 +56,7 @@ const Contacts = () => {
     <Box m="20px">
       <Header
         title="CONTACTS"
-        subtitle="List of Contacts for Future Reference"
+        subtitle="Listing de vos Employés"
       />
       <Box
         m="40px 0 0 0"
@@ -94,6 +94,8 @@ const Contacts = () => {
           rows={mockDataContacts}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
+          componentsProps={{pagination: {
+            labelRowsPerPage: ('Lignes par page')}}}
         />
       </Box>
     </Box>

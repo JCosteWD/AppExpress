@@ -1,28 +1,29 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../../theme";
-import { mockTransactions } from "../../data/mockData";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
-import Header from "../../components/Header";
-import LineChart from "../../components/LineChart";
-import GeographyChart from "../../components/GeographyChart";
-import BarChart from "../../components/BarChart";
-import StatBox from "../../components/StatBox";
-import ProgressCircle from "../../components/ProgressCircle";
+import { Box, Button, IconButton, Typography, useTheme } from "@mui/material"
+import { tokens } from "../../../theme"
+import { mockTransactions } from "../../data/mockData"
+import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined"
+import EmailIcon from "@mui/icons-material/Email"
+import PointOfSaleIcon from "@mui/icons-material/PointOfSale"
+import PersonAddIcon from "@mui/icons-material/PersonAdd"
+import TrafficIcon from "@mui/icons-material/Traffic"
+import Header from "../../components/Header"
+import LineChart from "../../components/LineChart"
+import GeographyChart from "../../components/GeographyChart"
+import BarChart from "../../components/BarChart"
+import StatBox from "../../components/StatBox"
+import ProgressCircle from "../../components/ProgressCircle"
+import GetBoss from "../../../components/boss/GetBoss"
 
 const Dashboard = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
 
   return (
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
-
+        <Header title="DASHBOARD" subtitle="Bienvenue sur votre dashboard" />
+          <GetBoss />
         <Box>
           <Button
             sx={{
@@ -34,7 +35,7 @@ const Dashboard = () => {
             }}
           >
             <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-            Download Reports
+            Télécharger les Reports
           </Button>
         </Box>
       </Box>
@@ -56,7 +57,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="12,361"
-            subtitle="Emails Sent"
+            subtitle="Messages Recus"
             progress="0.75"
             increase="+14%"
             icon={
@@ -75,7 +76,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="431,225"
-            subtitle="Sales Obtained"
+            subtitle="Colis Livrés"
             progress="0.50"
             increase="+21%"
             icon={
@@ -94,7 +95,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="32,441"
-            subtitle="New Clients"
+            subtitle="Nouveaux Clients"
             progress="0.30"
             increase="+5%"
             icon={
@@ -113,7 +114,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="1,325,134"
-            subtitle="Traffic Received"
+            subtitle="Traffic Reçus"
             progress="0.80"
             increase="+43%"
             icon={
@@ -143,7 +144,7 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Revenue Generated
+                Revenus Généré
               </Typography>
               <Typography
                 variant="h3"
@@ -180,7 +181,7 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+              Messages récent
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -224,7 +225,7 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            Objectifs
           </Typography>
           <Box
             display="flex"
@@ -238,9 +239,9 @@ const Dashboard = () => {
               color={colors.greenAccent[500]}
               sx={{ mt: "15px" }}
             >
-              $48,352 revenue generated
+              76% de satifaction clients
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            <Typography>Tout dépôts confondu</Typography>
           </Box>
         </Box>
         <Box
@@ -253,7 +254,7 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
           >
-            Sales Quantity
+            Comptes Rendu
           </Typography>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
@@ -270,7 +271,7 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ marginBottom: "15px" }}
           >
-            Geography Based Traffic
+            Traffic Géographique
           </Typography>
           <Box height="200px">
             <GeographyChart isDashboard={true} />
@@ -278,7 +279,7 @@ const Dashboard = () => {
         </Box>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

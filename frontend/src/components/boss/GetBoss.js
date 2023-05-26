@@ -21,7 +21,7 @@ const GetBoss = () => {
 
       {boss && (
         <>
-          <p>Bienvenue {boss.data[0].username} !</p>
+          <p>{boss.data[0].username}</p>
         </>
       )}
     </div>
