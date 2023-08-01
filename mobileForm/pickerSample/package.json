@@ -1,0 +1,15 @@
+{
+    "name": "pickersample",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node start",
+        "mobile": "expo start --android"
+    },
+    "dependencies": {
+        "@react-native-picker/picker": "^2.4.8",
+        "expo": "^48.0.19",
+        "react": "^18.2.0",
+        "react-native": "^0.71.8"
+    }
+}
