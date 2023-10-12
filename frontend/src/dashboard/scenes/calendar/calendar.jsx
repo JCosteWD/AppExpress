@@ -1,5 +1,5 @@
-import { useState } from "react";
-import FullCalendar, { formatDate } from "@fullcalendar/react";
+/* import { useState } from "react"; */
+/* import FullCalendar, { formatDate } from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -12,18 +12,18 @@ import {
   ListItemText,
   Typography,
   useTheme,
-} from "@mui/material";
+} from "@mui/material"; */
 import Header from "../../components/Header";
-import { tokens } from "../../../theme";
+/* import { tokens } from "../../../theme"; */
 
 const Calendar = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  const [currentEvents, setCurrentEvents] = useState([]);
+/*   const theme = useTheme(); */
+/*   const colors = tokens(theme.palette.mode); */
+  /* const [currentEvents, setCurrentEvents] = useState([]);
 
   const handleDateClick = (selected) => {
-    const title = prompt("Entrez un Titre pour votre nouvel Evenement");
-    const calendarApi = selected.view.calendar;
+    const title = prompt("Entrez un Titre pour votre nouvel Evenement"); */
+   /*  const calendarApi = selected.view.calendar;
     calendarApi.unselect();
 
     if (title) {
@@ -35,9 +35,9 @@ const Calendar = () => {
         allDay: selected.allDay,
       });
     }
-  };
+  }; */
 
-  const handleEventClick = (selected) => {
+  /* const handleEventClick = (selected) => {
     if (
       window.confirm(
         `Etes vous sur de vouloir supprimer cet Evenement ? '${selected.event.title}'`
@@ -45,15 +45,15 @@ const Calendar = () => {
     ) {
       selected.event.remove();
     }
-  };
+  }; */
 
   return (
-    <Box m="20px">
+    <div m="20px">
       <Header title="Calendrier" subtitle="Calendrier Interactif" />
 
-      <Box display="flex" justifyContent="space-between">
+      <div display="flex" justifyContent="space-between">
         {/* CALENDAR SIDEBAR */}
-        <Box
+       {/*  <Box
           flex="1 1 20%"
           backgroundColor={colors.primary[400]}
           p="15px"
@@ -85,10 +85,10 @@ const Calendar = () => {
               </ListItem>
             ))}
           </List>
-        </Box>
+        </Box> */}
 
         {/* CALENDAR */}
-        <Box flex="1 1 100%" ml="15px">
+        {/* <Box flex="1 1 100%" ml="15px">
           <FullCalendar
             locale={frLocale}
             height="75vh"
@@ -124,10 +124,10 @@ const Calendar = () => {
               },
             ]}
           />
-        </Box>
-      </Box>
-    </Box>
+        </Box> */}
+      </div>
+    </div>
   );
-};
+}
 
 export default Calendar;

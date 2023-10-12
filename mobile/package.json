@@ -11,6 +11,7 @@
   "proxy": "http://192.168.1.163:7000",
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
+    "@react-native-picker/picker": "2.4.8",
     "axios": "^1.4.0",
     "expo": "~48.0.18",
     "expo-status-bar": "~1.4.4",

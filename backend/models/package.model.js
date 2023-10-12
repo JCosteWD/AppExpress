@@ -16,6 +16,7 @@ const addPackageSchema = mongoose.Schema(
     },
     other: {
       type: Number,
+      required: true
     }
   },
   {

@@ -12,8 +12,10 @@
     "@fullcalendar/react": "^5.11.2",
     "@fullcalendar/timegrid": "^5.11.3",
     "@mui/icons-material": "^5.10.3",
+    "@mui/lab": "^5.0.0-alpha.143",
     "@mui/material": "^5.10.5",
     "@mui/x-data-grid": "^5.17.2",
+    "@mui/x-date-pickers": "^6.12.1",
     "@nivo/bar": "^0.83.0",
     "@nivo/core": "^0.83.0",
     "@nivo/geo": "^0.83.0",
@@ -25,6 +27,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.3.4",
     "chart.js": "^3.9.1",
+    "date-fns": "^2.30.0",
     "formik": "^2.2.9",
     "js-cookie": "^3.0.5",
     "react": "^18.2.0",
@@ -38,7 +41,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "front": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

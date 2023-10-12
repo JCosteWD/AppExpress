@@ -48,7 +48,7 @@ function AddUserForm({ onAddUser, onUpdateUser }) {
         Nom:
         <input className='dark:text-teal-400 border border-sky-500' type="text" name="lastname" onChange={handleInputChange} value={formData.lastname || ''} />
       </label>
-      <button type="submit" onClick={refresh}>Valider</button>
+      <button type="submit" onClick={refresh}>Valider</button>                            
     </form>
   )
 }

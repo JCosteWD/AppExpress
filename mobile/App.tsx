@@ -2,6 +2,7 @@
 import { useState } from 'react'; */
 import { /* Button, */ StyleSheet, Text, View } from 'react-native';
 import DataForm from './src/components/Form1';
+import styles from './styles.css'
 
 export default function App() {
 
@@ -14,7 +15,7 @@ export default function App() {
  */
   return (
     <View style={styles.container}>
-      <Text>Bienvenu sur l'App'Express</Text>
+      <Text style={styles.h1}>Bienvenu sur l'App'Express</Text>
       {/* <Text>{count}</Text>
       <Button title="Increment" onPress={() => handleOnPress()} />
       <StatusBar style="auto" /> */}
@@ -24,12 +25,3 @@ export default function App() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1
-  },
-});

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import Form from '../form/index'
 
 function EditUser({ user, updateUser }) {
   const [formData, setFormData] = useState(user)
@@ -10,32 +11,33 @@ function EditUser({ user, updateUser }) {
       const response = await axios.put('/updateUser/' + formData._id, formData)
       console.log(response)
       updateUser(response.data.updatePost)
+      console.log(setFormData)
     } catch (error) {
       console.error(error)
     }
   }
 
-  const handleInputChange = (event) => {
+ /*  const handleInputChange = (event) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value
     })
-  }
-
-  /* const refresh = () => window.location.reload(true) */
+  } */
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Prénom:
-        <input type="text" name="firstname" onChange={handleInputChange} value={formData.firstname || ''} />
-      </label>
-      <label>
-        Nom:
-        <input type="text" name="lastname" onChange={handleInputChange} value={formData.lastname || ''} />
-      </label>
-      <button type="submit" /* onClick={refresh} */>Mettre à jour</button>
-    </form>
+    <Form
+      initialValues={{
+        // Passez les valeurs de l'utilisateur ici
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        phone: user.phone,
+        address1: user.address1,
+        address2: user.address2,
+        _id: user._id, 
+      }}
+      onUpdateUser={handleSubmit} 
+    />
   )
 }
 
