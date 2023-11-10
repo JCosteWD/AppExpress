@@ -37,8 +37,8 @@ const { addPackage } = require('../controllers/mobile/package/returnFromTour')
 router.get("/groups", getGroups)
 router.get("/tours", getTours)
 /* router.get("/tours/:depotId", getUpdateTours) */
-router.get("/tours/:depotId", getToursForDepot);
-router.get("/users", getUsers)
+/* router.get('/tours/:depotId', getToursForDepot); */
+router.get('/tours/:depotId', getToursForDepot);
 /* router.get("/tour/:id", getTour) */
 router.get("/user/:id", getUser)
 router.get("/boss", getBoss)

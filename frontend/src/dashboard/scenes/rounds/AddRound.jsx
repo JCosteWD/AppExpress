@@ -28,12 +28,16 @@ function AddRounds() {
       alert("Veuillez compléter votre demande.");
       return;
     }
-
+  
     if (values._id) {
       /* updateUser(values._id, values); */
     } else {
       try {
-        const response = await axios.post('/addtour', values);
+        const response = await axios.post('/addtour', {
+          depot: values.depot ,  
+          depotId: values.depotId,
+          tournee: values.tournee,
+        });
         console.log(response);
         window.location.reload(true);
         /* addUser(response.data.user); */
@@ -47,7 +51,7 @@ function AddRounds() {
 
   return (
     <Box m="20px">
-      <Header title="DEPOT" subtitle="Augmentez Votre Portefeuille De Tournées" />
+      <Header title="Ajouter une tournée" subtitle="Augmentez Votre Portefeuille De Tournées" />
 
       <Formik
   initialValues={{

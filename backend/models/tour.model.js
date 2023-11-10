@@ -6,6 +6,15 @@ const addTourSchema = mongoose.Schema(
       type: String,
       required: true
     },
+    /* depotId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Group',
+      required: true,
+    }, */
+    depotId: {
+      type: Number,
+      /* required: true, */
+    },
     tournee: {
       type: String,
       required: true
