@@ -15,7 +15,7 @@ function LoginForm() {
         headers: {
           'Content-Type': 'application/json'
         }
-      });
+      })
       if (response.ok) {
         const data = await response.json()
         document.cookie = `token=${data.token}; path=/; secure;`

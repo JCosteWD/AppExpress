@@ -22,8 +22,6 @@ function EditUser({ user, updateUser }) {
     })
   }
 
-  /* const refresh = () => window.location.reload(true) */
-
   return (
     <form onSubmit={handleSubmit}>
       <label>
@@ -34,7 +32,7 @@ function EditUser({ user, updateUser }) {
         Nom:
         <input type="text" name="lastname" onChange={handleInputChange} value={formData.lastname || ''} />
       </label>
-      <button type="submit" /* onClick={refresh} */>Mettre à jour</button>
+      <button type="submit">Mettre à jour</button>
     </form>
   )
 }

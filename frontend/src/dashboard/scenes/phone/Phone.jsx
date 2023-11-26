@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Box } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { tokens } from "../../../theme";
-import Header from "../../components/Header";
-import { useTheme } from "@mui/material";
+import { Box } from "@mui/material"
+import { DataGrid, GridToolbar } from "@mui/x-data-grid"
+import { tokens } from "../../../theme"
+import Header from "../../components/Header"
+import { useTheme } from "@mui/material"
 
 
 const Phones = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
   const [phones, setPhones] = useState([])
-/*   const [error, setError] = useState(null)
-  const [editUserId, setEditUserId] = useState(null) */
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,16 +18,13 @@ const Phones = () => {
         const response = await axios.get('/phones')
         setPhones(response.data.phones)
       } catch (error) {
-        /* setError(error) */
       }
-    };
+    }
 
     fetchData()
   }, [])
 
   const columns = [
-    /* { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registre ID" }, */
     {
       field: "marque",
       headerName: "Marque",
@@ -55,7 +49,7 @@ const Phones = () => {
       headerAlign: "center",
       align: "center",
     }  
-  ];
+  ]
 
   return (
     <Box m="20px">
@@ -112,7 +106,7 @@ const Phones = () => {
         />
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Phones;
+export default Phones

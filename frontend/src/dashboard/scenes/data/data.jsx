@@ -1,36 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Box } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { tokens } from "../../../theme";
-import Header from "../../components/Header";
-import { useTheme } from "@mui/material";
-/* import { useNavigate } from 'react-router-dom'; */
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { Box } from "@mui/material"
+import { DataGrid, GridToolbar } from "@mui/x-data-grid"
+import { tokens } from "../../../theme"
+import Header from "../../components/Header"
+import { useTheme } from "@mui/material"
 
 const Data = () => {
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  /* const navigate = useNavigate(); */
-
-  const [boxes, setBoxes] = useState([]);
-  const [error, setError] = useState(null);
+  const colors = tokens(theme.palette.mode)
+  const [boxes, setBoxes] = useState([])
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/packages');
-        setBoxes(response.data.data);
+        const response = await axios.get('/packages')
+        setBoxes(response.data.data)
       } catch (error) {
-        setError(error);
+        setError(error)
       }
-    };
+    }
 
-    fetchData();
-  }, []);
-
-  /* const handleRowClick = (params) => {
-    navigate(`/user/${params.id}`);
-  }; */
+    fetchData()
+  }, [])
 
   const columns = [
     {
@@ -60,18 +53,8 @@ const Data = () => {
       headerAlign: "center",
       align: "center",
       flex: 1,
-    }/* ,
-    {
-      field: "address1",
-      headerName: "Adresse 1",
-      flex: 1,
-    },
-    {
-      field: "address2",
-      headerName: "Adresse 2",
-      flex: 1,
-    } */
-  ];
+    }
+  ]
 
   return (
     <Box m="20px">
@@ -118,9 +101,7 @@ const Data = () => {
             loaded: box?.loaded,
             delivered: box?.delivered,
             returned: box?.returned,
-            other: box?.other/* ,
-            address1: package?.address1,
-            address2: package?.address2 */
+            other: box?.other
           }))}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
@@ -129,11 +110,10 @@ const Data = () => {
               labelRowsPerPage: 'Lignes par page'
             }
           }}
-          /* onRowClick={params => handleRowClick(params)} */
         />
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Data;
+export default Data

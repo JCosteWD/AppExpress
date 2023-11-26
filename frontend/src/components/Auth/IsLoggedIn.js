@@ -1,9 +1,9 @@
-import Cookies from 'js-cookie';
+import Cookies from 'js-cookie'
 
 const IsLoggedIn = () => {
-  let token = Cookies.get('token');
+  let token = Cookies.get('token')
 
-  return !!token;
+  return !!token
 };
 
-export default IsLoggedIn;
+export default IsLoggedIn

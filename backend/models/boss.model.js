@@ -18,7 +18,7 @@ const bossSchema = new mongoose.Schema({
       required: true
     }
   }]
-});
+})
 
 bossSchema.methods.generateAuthTokenAndSaveBoss = async function() {
   const authToken = jwt.sign({ _id: this._id.toString() }, process.env.JWT_SECRET, {

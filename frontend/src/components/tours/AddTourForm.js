@@ -25,14 +25,14 @@ function AddTourForm() {
           alert("Une erreur s'est produite lors de la soumission du formulaire.")
         }
       })
-  };
+  }
 
   const handleInputChange = (event) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value
-    });
-  };
+    })
+  }
 
   const refresh = () => window.location.reload(true)
 

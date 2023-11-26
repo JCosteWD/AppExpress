@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Box } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { tokens } from "../../../theme";
-import Header from "../../components/Header";
-import { useTheme } from "@mui/material";
+import { Box } from "@mui/material"
+import { DataGrid, GridToolbar } from "@mui/x-data-grid"
+import { tokens } from "../../../theme"
+import Header from "../../components/Header"
+import { useTheme } from "@mui/material"
 
 const Colis = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
 
   const [packages, setPackages] = useState([])
-/*   const [error, setError] = useState(null) */
   
     useEffect(() => {
       const fetchData = async () => {
@@ -19,16 +18,13 @@ const Colis = () => {
           const response = await axios.get('/packages')
           setPackages(response.data.data)
         } catch (error) {
-/*           setError(error) */
         }
-      };
+      }
   
       fetchData()
     }, [])
 
   const columns = [
-/*     { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registre ID" }, */
     {
       field: "loaded",
       headerName: "Colis Chargés",
@@ -54,7 +50,7 @@ const Colis = () => {
       type: "number",
       flex: 1,
     }
-  ];
+  ]
 
   return (
     <Box m="20px">
@@ -112,7 +108,7 @@ const Colis = () => {
         />
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Colis;
+export default Colis

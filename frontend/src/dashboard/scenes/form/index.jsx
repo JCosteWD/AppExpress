@@ -1,9 +1,9 @@
-import React from 'react';
-import axios from 'axios';
-import { Box, Button, TextField } from "@mui/material";
-import { Formik } from "formik";
-import * as yup from "yup";
-import Header from "../../components/Header";
+import React from 'react'
+import axios from 'axios'
+import { Box, Button, TextField } from "@mui/material"
+import { Formik } from "formik"
+import * as yup from "yup"
+import Header from "../../components/Header"
 
 function Form() {
 
@@ -21,18 +21,16 @@ function Form() {
     }
 
     if (values._id) { 
-      /* updateUser(values._id, values); */
     } else {
       try {
-        const response = await axios.post('/addUser', values);
-        console.log(response);
+        const response = await axios.post('/addUser', values)
+        console.log(response)
         window.location.reload(true)
-        /* addUser(response.data.user); */
       } catch (error) {
-        console.error(error);
+        console.error(error)
       }
     }
-  };
+  }
 
   return (
     <Box m="20px">
@@ -158,7 +156,7 @@ function Form() {
         )}
       </Formik>
     </Box>
-  );
+  )
 }
 
-export default Form;
+export default Form

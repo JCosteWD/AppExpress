@@ -13,7 +13,7 @@ function EditTour({ tour, updateTour }) {
     } catch (error) {
       console.error(error)
     }
-  };
+  }
 
   const handleInputChange = (event) => {
     setFormData({
@@ -44,7 +44,7 @@ function EditTour({ tour, updateTour }) {
       </label>
       <button type="submit" onClick={refresh}>Mettre à jour</button>
     </form>
-  );
-};
+  )
+}
 
 export default EditTour

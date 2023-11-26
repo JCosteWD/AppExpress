@@ -1,12 +1,12 @@
-import { Box, Typography, useTheme } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
-import { tokens } from "../../../theme";
-import { mockDataInvoices } from "../../data/mockData";
-import Header from "../../components/Header";
+import { Box, Typography, useTheme } from "@mui/material"
+import { DataGrid } from "@mui/x-data-grid"
+import { tokens } from "../../../theme"
+import { mockDataInvoices } from "../../data/mockData"
+import Header from "../../components/Header"
 
 const Invoices = () => {
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  const colors = tokens(theme.palette.mode)
   const columns = [
     { field: "id", headerName: "ID" },
     {
@@ -40,7 +40,7 @@ const Invoices = () => {
       headerName: "Date",
       flex: 1,
     },
-  ];
+  ]
 
   return (
     <Box m="20px">
@@ -78,7 +78,7 @@ const Invoices = () => {
             labelRowsPerPage: ('Lignes par page')}}} />
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Invoices;
+export default Invoices

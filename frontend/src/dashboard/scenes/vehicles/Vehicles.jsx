@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Box } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { tokens } from "../../../theme";
-import Header from "../../components/Header";
-import { useTheme } from "@mui/material";
+import { Box } from "@mui/material"
+import { DataGrid, GridToolbar } from "@mui/x-data-grid"
+import { tokens } from "../../../theme"
+import Header from "../../components/Header"
+import { useTheme } from "@mui/material"
 
 
 const Vehicles = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
   const [vehicles, setVehicles] = useState([])
-/*   const [error, setError] = useState(null)
-  const [editUserId, setEditUserId] = useState(null) */
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,16 +18,13 @@ const Vehicles = () => {
         const response = await axios.get('/vehicles')
         setVehicles(response.data.vehicles)
       } catch (error) {
-        /* setError(error) */
       }
-    };
+    }
 
     fetchData()
   }, [])
 
   const columns = [
-    /* { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registre ID" }, */
     {
       field: "marque",
       headerName: "Marque",
@@ -55,7 +49,7 @@ const Vehicles = () => {
       headerAlign: "center",
       align: "center",
     }  
-  ];
+  ]
 
   return (
     <Box m="20px">
@@ -112,7 +106,7 @@ const Vehicles = () => {
         />
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Vehicles;
+export default Vehicles

@@ -10,6 +10,6 @@ const addGroupSchema = mongoose.Schema(
   {
     timestamps: true
   }
-);
+)
 
 module.exports = mongoose.model("group", addGroupSchema)

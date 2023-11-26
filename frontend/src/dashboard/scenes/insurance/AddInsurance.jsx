@@ -1,43 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Box, Button, FormControl, MenuItem, Select, TextField } from "@mui/material";
-import { Formik } from "formik";
-import * as yup from "yup";
-import Header from "../../components/Header";
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { Box, Button, FormControl, MenuItem, Select, TextField } from "@mui/material"
+import { Formik } from "formik"
+import * as yup from "yup"
+import Header from "../../components/Header"
 
 function AddInsurance() {
-  const [insuranceOptions, setInsuranceOptions] = useState([]); 
+  const [insuranceOptions, setInsuranceOptions] = useState([])
   useEffect(() => {
     const fetchInsuranceOptions = async () => {
       try {
-        const response = await axios.get('/vehicles');
-        setInsuranceOptions(response.data.vehicles);
+        const response = await axios.get('/vehicles')
+        setInsuranceOptions(response.data.vehicles)
       } catch (error) {
-        console.error('Erreur lors de la récupération des options des véhicules :', error);
+        console.error('Erreur lors de la récupération des options des véhicules :', error)
       }
-    };
+    }
 
-    fetchInsuranceOptions();
-  }, []);
+    fetchInsuranceOptions()
+  }, [])
 
   const handleSubmit = async (values) => {
-    console.log("Form values:", values);
+    console.log("Form values:", values)
     if (!values.startDate || !values.endDate) {
-      alert("Veuillez compléter votre demande.");
-      return;
+      alert("Veuillez compléter votre demande.")
+      return
     }
 
     if (values._id) {
     } else {
       try {
-        const response = await axios.post('/addinsurance', values);
-        console.log(response);
-        window.location.reload(true);
+        const response = await axios.post('/addinsurance', values)
+        console.log(response)
+        window.location.reload(true)
       } catch (error) {
-        console.error(error);
+        console.error(error)
       }
     }
-  };
+  }
 
   return (
       <Box m="20px">
@@ -67,7 +67,6 @@ function AddInsurance() {
               <label>Immatriculation
                 <FormControl fullWidth variant="filled">
                   <Select
-                    /* label="Immatriculation" */
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.numberPlate || ''}
@@ -87,7 +86,6 @@ function AddInsurance() {
                   fullWidth
                   variant="filled"
                   type="date"
-                  /* label="Date de début" */
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.startDate}
@@ -102,7 +100,6 @@ function AddInsurance() {
                   fullWidth
                   variant="filled"
                   type="date"
-                  /* label="Date de fin" */
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.endDate}
@@ -122,7 +119,7 @@ function AddInsurance() {
           )}
         </Formik>
       </Box>
-  );
+  )
 }
 
-export default AddInsurance;
+export default AddInsurance

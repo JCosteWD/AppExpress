@@ -1,9 +1,9 @@
-/* import { useState } from "react"; */
-/* import FullCalendar, { formatDate } from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
-import listPlugin from "@fullcalendar/list";
+/* import { useState } from "react" */
+/* import FullCalendar, { formatDate } from "@fullcalendar/react"
+import dayGridPlugin from "@fullcalendar/daygrid"
+import timeGridPlugin from "@fullcalendar/timegrid"
+import interactionPlugin from "@fullcalendar/interaction"
+import listPlugin from "@fullcalendar/list"
 import frLocale from '@fullcalendar/core/locales/fr'
 import {
   Box,
@@ -12,19 +12,19 @@ import {
   ListItemText,
   Typography,
   useTheme,
-} from "@mui/material"; */
-import Header from "../../components/Header";
-/* import { tokens } from "../../../theme"; */
+} from "@mui/material" */
+import Header from "../../components/Header"
+/* import { tokens } from "../../../theme" */
 
 const Calendar = () => {
-/*   const theme = useTheme(); */
-/*   const colors = tokens(theme.palette.mode); */
-  /* const [currentEvents, setCurrentEvents] = useState([]);
+/*   const theme = useTheme() */
+/*   const colors = tokens(theme.palette.mode) */
+  /* const [currentEvents, setCurrentEvents] = useState([])
 
   const handleDateClick = (selected) => {
-    const title = prompt("Entrez un Titre pour votre nouvel Evenement"); */
-   /*  const calendarApi = selected.view.calendar;
-    calendarApi.unselect();
+    const title = prompt("Entrez un Titre pour votre nouvel Evenement") */
+   /*  const calendarApi = selected.view.calendar
+    calendarApi.unselect()
 
     if (title) {
       calendarApi.addEvent({
@@ -35,7 +35,7 @@ const Calendar = () => {
         allDay: selected.allDay,
       });
     }
-  }; */
+  } */
 
   /* const handleEventClick = (selected) => {
     if (
@@ -45,7 +45,7 @@ const Calendar = () => {
     ) {
       selected.event.remove();
     }
-  }; */
+  } */
 
   return (
     <div m="20px">
@@ -127,7 +127,7 @@ const Calendar = () => {
         </Box> */}
       </div>
     </div>
-  );
+  )
 }
 
-export default Calendar;
+export default Calendar

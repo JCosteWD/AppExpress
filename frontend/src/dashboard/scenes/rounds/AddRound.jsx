@@ -1,36 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Box, Button, FormControl, MenuItem, Select, TextField } from "@mui/material";
-import { Formik } from "formik";
-import * as yup from "yup";
-import Header from "../../components/Header";
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { Box, Button, FormControl, MenuItem, Select, TextField } from "@mui/material"
+import { Formik } from "formik"
+import * as yup from "yup"
+import Header from "../../components/Header"
 
 function AddRounds() {
-  const [depotOptions, setDepotOptions] = useState([]); 
+  const [depotOptions, setDepotOptions] = useState([])
   useEffect(() => {
     const fetchDepotOptions = async () => {
       try {
-        const response = await axios.get('/groups');
-        setDepotOptions(response.data.groups);
-        /* console.log(response.data.groups); */
-        /* console.log(fetchDepotOptions); */
+        const response = await axios.get('/groups')
+        setDepotOptions(response.data.groups)
       } catch (error) {
-        console.error('Erreur lors de la récupération des options de dépôt :', error);
+        console.error('Erreur lors de la récupération des options de dépôt :', error)
       }
-    };
+    }
 
-    fetchDepotOptions();
-  }, []);
+    fetchDepotOptions()
+  }, [])
 
   const handleSubmit = async (values) => {
-    console.log("Form values:", values);
+    console.log("Form values:", values)
     if (!values.depot || !values.tournee) {
-      alert("Veuillez compléter votre demande.");
-      return;
+      alert("Veuillez compléter votre demande.")
+      return
     }
   
     if (values._id) {
-      /* updateUser(values._id, values); */
     } else {
       try {
         const response = await axios.post('/addtour', {
@@ -39,15 +36,12 @@ function AddRounds() {
           tournee: values.tournee,
         });
         console.log(response);
-        window.location.reload(true);
-        /* addUser(response.data.user); */
+        window.location.reload(true)
       } catch (error) {
-        console.error(error);
+        console.error(error)
       }
     }
-  };
-
-  /* console.log("Render Options:", depotOptions) */
+  }
 
   return (
     <Box m="20px">
@@ -113,7 +107,7 @@ function AddRounds() {
   )}
 </Formik>
     </Box>
-  );
+  )
 }
 
-export default AddRounds;
+export default AddRounds

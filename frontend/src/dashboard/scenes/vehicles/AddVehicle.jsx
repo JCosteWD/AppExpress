@@ -1,9 +1,9 @@
-import React from 'react';
-import axios from 'axios';
-import { Box, Button, TextField } from "@mui/material";
-import { Formik } from "formik";
-import * as yup from "yup";
-import Header from "../../components/Header";
+import React from 'react'
+import axios from 'axios'
+import { Box, Button, TextField } from "@mui/material"
+import { Formik } from "formik"
+import * as yup from "yup"
+import Header from "../../components/Header"
 
 function AddVehicle() {
 
@@ -11,23 +11,21 @@ function AddVehicle() {
     if (
       !values.marque || !values.model || !values.numberPlate
     ) {
-      alert("Veuillez compléter votre demande.");
-      return;
+      alert("Veuillez compléter votre demande.")
+      return
     }
 
     if (values._id) { 
-      /* updateUser(values._id, values); */
     } else {
       try {
-        const response = await axios.post('/addvehicle', values);
-        console.log(response);
+        const response = await axios.post('/addvehicle', values)
+        console.log(response)
         window.location.reload(true)
-        /* addUser(response.data.user); */
       } catch (error) {
-        console.error(error);
+        console.error(error)
       }
     }
-  };
+  }
 
   return (
     <Box m="20px">
@@ -95,19 +93,6 @@ function AddVehicle() {
                 helperText={touched.numberPlate && errors.numberPlate}
                 sx={{ gridColumn: "span 2" }}
               />
-            {/*   <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Tournée"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.depot}
-                name="depot"
-                error={touched.depot && !!errors.depot}
-                helperText={touched.depot && errors.depot}
-                sx={{ gridColumn: "span 2" }}
-              /> */}
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
               <Button type="submit" color="secondary" variant="contained">
@@ -118,7 +103,7 @@ function AddVehicle() {
         )}
       </Formik>
     </Box>
-  );
+  )
 }
 
-export default AddVehicle;
+export default AddVehicle

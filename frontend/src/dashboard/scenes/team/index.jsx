@@ -63,7 +63,7 @@ const Team = () => {
               {access}
             </Typography>
           </Box>
-        );
+        )
       },
     },
   ]

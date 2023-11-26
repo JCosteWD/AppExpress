@@ -17,7 +17,7 @@ const GetTour = () => {
       }
     }
 
-    fetchData();
+    fetchData()
   }, [])
 
   const handleDelete = async (id) => {
@@ -57,7 +57,7 @@ const GetTour = () => {
         />
       )}
     </div>
-  );
-};
+  )
+}
 
 export default GetTour

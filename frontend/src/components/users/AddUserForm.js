@@ -26,8 +26,8 @@ function AddUserForm({ onAddUser, onUpdateUser }) {
     setFormData({
       firstname: '',
       lastname: ''
-    });
-  };
+    })
+  }
 
   const handleInputChange = (event) => {
     setFormData({

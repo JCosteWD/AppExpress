@@ -17,17 +17,9 @@ function EditUser({ user, updateUser }) {
     }
   }
 
- /*  const handleInputChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value
-    })
-  } */
-
   return (
     <Form
       initialValues={{
-        // Passez les valeurs de l'utilisateur ici
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,

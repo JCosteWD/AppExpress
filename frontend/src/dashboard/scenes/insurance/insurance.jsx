@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Box } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { tokens } from "../../../theme";
-import Header from "../../components/Header";
-import { useTheme } from "@mui/material";
+import { Box } from "@mui/material"
+import { DataGrid, GridToolbar } from "@mui/x-data-grid"
+import { tokens } from "../../../theme"
+import Header from "../../components/Header"
+import { useTheme } from "@mui/material"
 
 
 const Isurance = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
   const [insurances, setInsurances] = useState([])
-/*   const [error, setError] = useState(null)
-  const [editUserId, setEditUserId] = useState(null) */
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,16 +18,14 @@ const Isurance = () => {
         const response = await axios.get('/insurances')
         setInsurances(response.data.insurances)
       } catch (error) {
-        /* setError(error) */
+
       }
-    };
+    }
 
     fetchData()
   }, [])
 
   const columns = [
-    /* { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registre ID" }, */
     {
       field: "startDate",
       headerName: "Date de début",
@@ -45,7 +40,7 @@ const Isurance = () => {
       headerAlign: "center",
       align: "center",
     },
-  ];
+  ]
 
   return (
     <Box m="20px">
@@ -101,7 +96,7 @@ const Isurance = () => {
         />
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Isurance;
+export default Isurance
